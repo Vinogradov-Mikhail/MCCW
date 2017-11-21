@@ -37,17 +37,17 @@ namespace Лабораторная4
 
         private double f(double x)
         {
-            return Math.Exp(-x) - (Math.Pow(x, 2)) / 2;
+            return (Math.Pow(x, 2));//Math.Exp(-x) - (Math.Pow(x, 2)) / 2;
         }
 
         private double dtf(double x)
         {
-            return (-1) * Math.Exp(-x) - x;
+            return 2 * x;//(-1) * Math.Exp(-x) - x;
         }
 
         private double ddtf(double x)
         {
-            return Math.Exp(-x) - 1;
+            return 2;//Math.Exp(-x) - 1;
         }
 
         private double xj(int j)
@@ -253,7 +253,7 @@ namespace Лабораторная4
             {
                 fx = Convert.ToDouble(xBox.Text);
                 n = Convert.ToInt32(nBox.Text);
-                if ((fx > f(a)) || (fx < f(b)) || (n > m) || (n < 0))
+                if ((fx < f(a)) || (fx > f(b)) || (n > m) || (n < 0))
                 {
                     var er = new Error("Вы неправильно ввели f(x) или n");
                     er.Show();
